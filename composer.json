@@ -1,0 +1,64 @@
+{
+    "name": "camelmailer/camelmailer-laravel",
+    "description": "CamelMailer for Laravel — mail transport, facade and config for the CamelMailer API.",
+    "keywords": ["php", "laravel", "camelmailer", "email", "transactional", "mail", "transport"],
+    "homepage": "https://camelmailer.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CamelMailer contributors",
+            "homepage": "https://github.com/camelmailer/camelmailer-laravel/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "camelmailer/camelmailer": "^0.1",
+        "illuminate/mail": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "symfony/mailer": "^6.2|^7.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "orchestra/testbench": "^8.22|^9.0|^10.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.1|^11.0|^12.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/camelmailer/camelmailer-php"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CamelMailer\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CamelMailer\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CamelMailer\\Laravel\\CamelMailerServiceProvider"
+            ],
+            "aliases": {
+                "CamelMailer": "CamelMailer\\Laravel\\Facades\\CamelMailer"
+            }
+        }
+    },
+    "scripts": {
+        "lint": "pint --test",
+        "lint:fix": "pint",
+        "analyse": "phpstan analyse",
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
