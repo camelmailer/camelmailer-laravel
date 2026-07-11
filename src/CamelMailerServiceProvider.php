@@ -11,6 +11,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
+use RuntimeException;
 
 final class CamelMailerServiceProvider extends ServiceProvider
 {
@@ -43,7 +44,13 @@ final class CamelMailerServiceProvider extends ServiceProvider
         }
 
         Mail::extend('camelmailer', function (): CamelMailerTransport {
-            return new CamelMailerTransport($this->app->make(Client::class));
+            $client = $this->app->make(Client::class);
+
+            if (! $client instanceof Client) {
+                throw new RuntimeException('The CamelMailer client is not bound to the container.');
+            }
+
+            return new CamelMailerTransport($client);
         });
     }
 }
