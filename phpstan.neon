@@ -1,5 +1,9 @@
 parameters:
     level: max
+    # The container's make() return type is a PHPDoc generic on Laravel 11+
+    # but plain mixed on Laravel 10 — runtime instanceof narrowing must be
+    # valid across the whole support matrix.
+    treatPhpDocTypesAsCertain: false
     paths:
         - src
         - config
