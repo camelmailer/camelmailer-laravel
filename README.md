@@ -1,9 +1,9 @@
-# CamelMailer for Laravel
+# Camelmailer for Laravel
 
 [![CI](https://github.com/camelmailer/camelmailer-laravel/actions/workflows/ci.yml/badge.svg)](https://github.com/camelmailer/camelmailer-laravel/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Send Laravel mail through [CamelMailer](https://camelmailer.com) — a native `MAIL_MAILER=camelmailer` transport for Mailables and Notifications, plus a facade for the full [PHP SDK](https://github.com/camelmailer/camelmailer-php).
+Send Laravel mail through [Camelmailer](https://camelmailer.com) — a native `MAIL_MAILER=camelmailer` transport for Mailables and Notifications, plus a facade for the full [PHP SDK](https://github.com/camelmailer/camelmailer-php).
 
 ## Install
 
@@ -70,7 +70,7 @@ class OrderShipped extends Mailable
 }
 ```
 
-Attachments, CC/BCC, reply-to and custom headers are all mapped to the API. Two special headers let you use CamelMailer features per message:
+Attachments, CC/BCC, reply-to and custom headers are all mapped to the API. Two special headers let you use Camelmailer features per message:
 
 ```php
 $message->getHeaders()->addTextHeader('X-CamelMailer-Tag', 'order-shipped');

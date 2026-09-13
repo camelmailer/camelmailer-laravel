@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `MAIL_MAILER=camelmailer` Symfony Mailer transport: Mailables and Notifications are delivered through the CamelMailer API, including attachments, CC/BCC, reply-to, custom headers and the `X-CamelMailer-Tag` / `X-CamelMailer-Stream` headers.
+- `MAIL_MAILER=camelmailer` Symfony Mailer transport: Mailables and Notifications are delivered through the Camelmailer API, including attachments, CC/BCC, reply-to, custom headers and the `X-CamelMailer-Tag` / `X-CamelMailer-Stream` headers.
 - `CamelMailerServiceProvider` with `config/camelmailer.php` (`CAMELMAILER_API_KEY`, `CAMELMAILER_BASE_URL`) and a `CamelMailer\Client` container singleton.
 - `CamelMailer` facade exposing the SDK resources (`emails()`, `templates()`, `streams()`, `stats()`, `bounces()`, `dmarc()`, `ping()`, `server()`).
 

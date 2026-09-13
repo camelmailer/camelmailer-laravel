@@ -1,12 +1,12 @@
 {
     "name": "camelmailer/camelmailer-laravel",
-    "description": "CamelMailer for Laravel — mail transport, facade and config for the CamelMailer API.",
+    "description": "Camelmailer for Laravel — mail transport, facade and config for the Camelmailer API.",
     "keywords": ["php", "laravel", "camelmailer", "email", "transactional", "mail", "transport"],
     "homepage": "https://camelmailer.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "CamelMailer contributors",
+            "name": "Camelmailer contributors",
             "homepage": "https://github.com/camelmailer/camelmailer-laravel/contributors"
         }
     ],

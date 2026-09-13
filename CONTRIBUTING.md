@@ -21,4 +21,4 @@ composer analyse   # PHPStan, level max
 
 - Tests first: transport behaviour is tested against a fake SDK transporter — no HTTP in tests.
 - PHP 8.1+ and Laravel 10/11/12 compatibility (see the CI matrix).
-- Keep the transport mapping in lockstep with the CamelMailer OpenAPI spec.
+- Keep the transport mapping in lockstep with the Camelmailer OpenAPI spec.
