@@ -44,7 +44,7 @@ php artisan vendor:publish --tag=camelmailer-config
 
 ## Send a Mailable
 
-Nothing changes — your existing Mailables just go through CamelMailer:
+Nothing changes — your existing Mailables just go through Camelmailer:
 
 ```php
 use App\Mail\OrderShipped;
