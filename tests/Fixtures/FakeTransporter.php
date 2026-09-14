@@ -9,7 +9,7 @@ use CamelMailer\Exceptions\CamelMailerException;
 
 final class FakeTransporter implements TransporterInterface
 {
-    /** @var list<array{method: string, path: string, body: array<string, mixed>|null, query: array<string, int|string>}> */
+    /** @var list<array{method: string, path: string, body: array<mixed>|null, query: array<string, int|string>, headers: array<string, string>}> */
     public array $requests = [];
 
     /** @var list<array<string, mixed>|CamelMailerException> */
@@ -28,9 +28,9 @@ final class FakeTransporter implements TransporterInterface
         $this->queue[] = $exception;
     }
 
-    public function request(string $method, string $path, ?array $body = null, array $query = []): array
+    public function request(string $method, string $path, ?array $body = null, array $query = [], array $headers = []): array
     {
-        $this->requests[] = compact('method', 'path', 'body', 'query');
+        $this->requests[] = compact('method', 'path', 'body', 'query', 'headers');
 
         $next = array_shift($this->queue);
 
@@ -42,7 +42,7 @@ final class FakeTransporter implements TransporterInterface
     }
 
     /**
-     * @return array{method: string, path: string, body: array<string, mixed>|null, query: array<string, int|string>}
+     * @return array{method: string, path: string, body: array<mixed>|null, query: array<string, int|string>, headers: array<string, string>}
      */
     public function lastRequest(): array
     {

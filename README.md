@@ -116,10 +116,40 @@ CamelMailer::emails()->send([
 ]);
 
 CamelMailer::templates()->render('welcome', ['name' => 'Ada']);
+CamelMailer::streams()->list();
 CamelMailer::stats()->get();
 CamelMailer::bounces()->list();
 CamelMailer::dmarc()->summary();
 CamelMailer::ping();
+```
+
+### Broadcast
+
+```php
+// A campaign is content plus an audience. The two ways to create one
+// behave differently: createDraft() writes it and waits, createAndSend()
+// expands it to the stream's subscribers before the call returns.
+CamelMailer::campaigns()->createDraft([
+    'stream' => 'newsletter',
+    'from' => 'news@acme.com',
+    'name' => 'September',
+    'subject' => 'What shipped',
+    'text_body' => 'Hello.',
+]);
+CamelMailer::campaigns()->createAndSend('newsletter', [
+    'name' => 'Status update',
+    'from' => 'news@acme.com',
+    'text_body' => 'All clear.',
+]);
+
+// A broadcast send to an address that is not subscribed is refused, so
+// this list is the audience.
+CamelMailer::subscribers()->add('newsletter', ['address' => 'ada@example.com']);
+CamelMailer::subscribers()->import('newsletter', ['ada@example.com', 'grace@example.com']);
+
+CamelMailer::layouts()->list();
+CamelMailer::inbound()->list(['status' => 'held']);
+CamelMailer::logs()->tags();
 ```
 
 Or inject `CamelMailer\Client` anywhere via the container.
