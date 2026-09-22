@@ -11,7 +11,7 @@ Send Laravel mail through [Camelmailer](https://camelmailer.com) — a native `M
 composer require camelmailer/camelmailer-laravel
 ```
 
-Requires PHP 8.1+ and Laravel 10, 11 or 12.
+Requires PHP 8.1+ and Laravel 10, 11, 12 or 13.
 
 ## Configure
 

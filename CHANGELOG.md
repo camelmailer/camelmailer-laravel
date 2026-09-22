@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Laravel 13 support: `illuminate/mail` and `illuminate/support` ^13.0, and
+  `symfony/mailer` ^8.0, which Laravel 13 ships with. The transport needed no
+  change; CI now runs the suite against Laravel 13 on PHP 8.3 and 8.4.
+
 ## [0.2.0] - 2026-09-14
 
 ### Added
